@@ -4,49 +4,37 @@
     <meta charset="UTF-8">
     <title>日本語を英語の語順にしよう①</title>
     <style>
-        body, html {
+        body {
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #fcfcfc;
             font-family: sans-serif;
             color: #333;
-            line-height: 1.4;
         }
 
         .page {
             width: 210mm;
             height: 297mm;
-            padding: 18mm 15mm;
+            padding: 20mm;
             margin: 10mm auto;
             background-color: white;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             box-sizing: border-box;
+            border: 4px double #4a90e2;
             position: relative;
-            overflow: hidden;
-            border: 2px dashed #a3cef8;
-            border-radius: 15px;
-        }
-
-        @media print {
-            body { background-color: white; }
-            .page {
-                margin: 0;
-                box-shadow: none;
-                border: none;
-            }
         }
 
         h1 {
             text-align: center;
-            font-size: 26pt;
-            margin-bottom: 10px;
+            font-size: 24pt;
+            margin-bottom: 30px;
             color: #2c3e50;
         }
 
         .name-section {
             text-align: right;
             font-size: 14pt;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .name-input {
@@ -55,90 +43,119 @@
             width: 200px;
         }
 
-        .problem-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
         .problem-item {
-            margin-bottom: 45px;
-            font-size: 18pt;
+            margin-bottom: 40px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 20px;
         }
 
-        .number {
+        .number-box {
             display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
             text-align: center;
-            border: 2px solid #4a90e2;
-            background-color: #eaf4ff;
-            border-radius: 50%;
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 8px;
             margin-right: 15px;
             font-weight: bold;
-            color: #2c3e50;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            margin-left: 55px;
+        }
+
+        .word-card {
+            border: 2px solid #555;
+            padding: 8px 15px;
+            border-radius: 10px;
+            background-color: #fff8e1;
+            font-size: 18pt;
+            font-weight: bold;
         }
 
         .answer-line {
             display: block;
-            margin-top: 10px;
-            border-bottom: 2px solid #555;
-            width: 100%;
-            height: 35px;
+            margin-top: 15px;
+            margin-left: 55px;
+            border-bottom: 2px solid #333;
+            height: 40px;
+            font-size: 18pt;
         }
 
-        .pencil-icon {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 40px;
-        }
-
-        .deco-bottom {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
+        .deco-icon {
             font-size: 30px;
+            margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
 <div class="page">
-    <div class="pencil-icon">✎</div>
-    
     <h1>日本語を英語の語順にしよう①</h1>
     
     <div class="name-section">
         なまえ（<span class="name-input"></span>）
     </div>
 
-    <div class="problem-list">
-        <div class="problem-item">
-            <span class="number">①</span> わたしは りんごを たべる
-            <span class="answer-line"></span>
+    <div class="problem-item">
+        <div class="number-box">1</div>
+        <div class="card-container">
+            <span class="word-card">わたしは</span>
+            <span class="word-card">りんごを</span>
+            <span class="word-card">たべる</span>
         </div>
-        <div class="problem-item">
-            <span class="number">②</span> ぼくは かおを あらう
-            <span class="answer-line"></span>
-        </div>
-        <div class="problem-item">
-            <span class="number">③</span> わたしは みずを のむ
-            <span class="answer-line"></span>
-        </div>
-        <div class="problem-item">
-            <span class="number">④</span> わたしたちは サッカーを する
-            <span class="answer-line"></span>
-        </div>
-        <div class="problem-item">
-            <span class="number">⑤</span> かれは えを かく
-            <span class="answer-line"></span>
-        </div>
+        <div class="answer-line"></div>
     </div>
 
-    <div class="deco-bottom">
-        🍎 ⭐ 😊
+    <div class="problem-item">
+        <div class="number-box">2</div>
+        <div class="card-container">
+            <span class="word-card">ぼくは</span>
+            <span class="word-card">かおを</span>
+            <span class="word-card">あらう</span>
+        </div>
+        <div class="answer-line"></div>
+    </div>
+
+    <div class="problem-item">
+        <div class="number-box">3</div>
+        <div class="card-container">
+            <span class="word-card">わたしは</span>
+            <span class="word-card">みずを</span>
+            <span class="word-card">のむ</span>
+        </div>
+        <div class="answer-line"></div>
+    </div>
+
+    <div class="problem-item">
+        <div class="number-box">4</div>
+        <div class="card-container">
+            <span class="word-card">わたしたちは</span>
+            <span class="word-card">サッカーを</span>
+            <span class="word-card">する</span>
+        </div>
+        <div class="answer-line"></div>
+    </div>
+
+    <div class="problem-item">
+        <div class="number-box">5</div>
+        <div class="card-container">
+            <span class="word-card">かれは</span>
+            <span class="word-card">えを</span>
+            <span class="word-card">かく</span>
+        </div>
+        <div class="answer-line"></div>
+    </div>
+
+    <div class="deco-icon">
+        🍎 ✏️ ⭐ 
     </div>
 </div>
 
