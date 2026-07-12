@@ -113,7 +113,7 @@
             border: 2px solid #555;
             padding: 5px 15px;
             border-radius: 10px;
-            background-color: #fff8e1;
+            background-color: #f2f2f2;
             font-size: 18pt;
             font-weight: bold;
         }
@@ -135,7 +135,12 @@
         @media print {
             .control-panel { display: none; }
             body { background-color: white; }
-            .page { margin: 0; box-shadow: none; border: 4px double #4a90e2; }
+            .page { 
+                margin: 0; 
+                box-shadow: none; 
+                border: 4px double #4a90e2; 
+                -webkit-print-color-adjust: exact;
+            }
         }
     </style>
 </head>
@@ -156,7 +161,7 @@
     <div class="name-section">なまえ（<span class="name-input"></span>）</div>
     <div class="problem-list" id="problemList">
     </div>
-    
+    <div class="deco-icon">🍎 ✏️ ⭐ 😊</div>
 </div>
 
 <script>
