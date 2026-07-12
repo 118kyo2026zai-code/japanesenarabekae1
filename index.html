@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>英語語順プリント作成ツール</title>
     <style>
-        /* レイアウト調整 */
         html, body {
             margin: 0;
             padding: 0;
@@ -12,7 +11,6 @@
             font-family: sans-serif;
         }
 
-        /* 編集・操作エリア（印刷時は非表示） */
         .control-panel {
             width: 210mm;
             margin: 10px auto;
@@ -24,9 +22,10 @@
 
         textarea {
             width: 100%;
-            height: 150px;
+            height: 120px;
             margin-top: 10px;
-            font-size: 14px;
+            font-size: 16px;
+            padding: 10px;
         }
 
         button {
@@ -37,13 +36,13 @@
             color: white;
             border: none;
             border-radius: 4px;
+            font-size: 14px;
         }
 
-        /* 印刷用プリントエリア */
         .page {
             width: 210mm;
             height: 297mm;
-            padding: 15mm;
+            padding: 20mm;
             margin: 10mm auto;
             background-color: white;
             box-sizing: border-box;
@@ -53,80 +52,78 @@
 
         h1 {
             text-align: center;
-            font-size: 20pt;
-            margin: 0 0 15px 0;
+            font-size: 24pt;
+            margin: 0 0 30px 0;
             color: #2c3e50;
         }
 
         .name-section {
             text-align: right;
-            font-size: 12pt;
-            margin-bottom: 15px;
+            font-size: 14pt;
+            margin-bottom: 30px;
         }
 
         .name-input {
             border-bottom: 2px solid #333;
             display: inline-block;
-            width: 150px;
+            width: 200px;
         }
 
         .problem-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            display: block;
         }
 
         .problem-item {
-            margin-bottom: 10px;
+            margin-bottom: 35px;
             border-bottom: 1px dotted #ccc;
-            padding-bottom: 5px;
+            padding-bottom: 20px;
         }
 
         .number-box {
             display: inline-block;
-            width: 24px;
-            height: 24px;
-            line-height: 24px;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
             text-align: center;
             background-color: #4a90e2;
             color: white;
-            border-radius: 5px;
-            margin-right: 5px;
+            border-radius: 8px;
+            margin-right: 15px;
             font-weight: bold;
-            font-size: 12pt;
+            font-size: 16pt;
         }
 
         .card-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 4px;
-            margin-bottom: 5px;
-            margin-left: 30px;
+            gap: 10px;
+            margin-bottom: 10px;
+            margin-left: 55px;
         }
 
         .word-card {
             border: 2px solid #555;
-            padding: 3px 8px;
-            border-radius: 6px;
+            padding: 5px 15px;
+            border-radius: 10px;
             background-color: #fff8e1;
-            font-size: 13pt;
+            font-size: 18pt;
             font-weight: bold;
         }
 
         .answer-line {
             display: block;
-            margin-left: 30px;
+            margin-top: 20px;
+            margin-left: 55px;
             border-bottom: 2px solid #333;
-            height: 22px;
+            height: 30px;
         }
 
         .deco-icon {
-            font-size: 25px;
-            margin-top: 15px;
+            font-size: 30px;
+            margin-top: 20px;
             text-align: center;
         }
 
-        /* 印刷設定 */
         @media print {
             .control-panel { display: none; }
             body { background-color: white; }
@@ -158,15 +155,10 @@
 ぼくは,かおを,あらう
 わたしは,みずを,のむ
 わたしたちは,サッカーを,する
-かれは,えを,かく
-あなたは,ほんを,よむ
-かのじょは,テニスを,する
-あなたたちは,パンを,たべる
-わたしたちは,うたを,うたう
-わたしは,ぼうしを,もつ`;
+かれは,えを,かく`;
 
     function copyPrompt() {
-        const prompt = "以下の条件で、英語の語順学習プリント用の日本語の文章を10個作ってください。・小学校高学年向け・形式は「主語,目的語,動詞」の順番でカンマ区切りにする・第三文型(SVO)の文のみを使用する・主語は「わたし」「ぼく」「あなた」「あなたたち」「かれ」「かのじょ」「わたしたち」をランダムに混ぜる";
+        const prompt = "以下の条件で、英語の語順学習プリント用の日本語の文章を5個作ってください。・小学校高学年向け・形式は「主語,目的語,動詞」の順番でカンマ区切りにする・第三文型(SVO)の文のみを使用する・主語は「わたし」「ぼく」「あなた」「あなたたち」「かれ」「かのじょ」「わたしたち」をランダムに混ぜる";
         navigator.clipboard.writeText(prompt);
         alert("プロンプトをコピーしました！AIに貼り付けてください。");
     }
@@ -202,7 +194,6 @@
         });
     }
 
-    // 初回読み込み
     resetToDefault();
 </script>
 </body>
