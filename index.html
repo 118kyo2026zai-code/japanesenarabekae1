@@ -10,7 +10,7 @@
             background-color: #f0f0f0;
             font-family: sans-serif;
         }
-
+-webkit-print-color-adjust: exact;
         .control-panel {
             width: 210mm;
             margin: 10px auto;
@@ -51,10 +51,10 @@
             width: 210mm;
             height: 297mm;
             padding: 15mm 20mm;
-            margin: 10mm auto;
+            margin: 20px auto;
             background-color: white;
             box-sizing: border-box;
-            border: 4px double #4a90e2;
+            border: 5px double #4a90e2;
             position: relative;
         }
 
@@ -93,8 +93,8 @@
             height: 35px;
             line-height: 35px;
             text-align: center;
-            background-color: #4a90e2;
-            color: white;
+            border: 3px solid #4a90e2;
+            color: #4a90e2;
             border-radius: 8px;
             margin-right: 15px;
             font-weight: bold;
@@ -138,7 +138,7 @@
             .page { 
                 margin: 0; 
                 box-shadow: none; 
-                border: 4px double #4a90e2; 
+                border: 5px double #4a90e2; 
                 -webkit-print-color-adjust: exact;
             }
         }
@@ -161,6 +161,7 @@
     <div class="name-section">なまえ（<span class="name-input"></span>）</div>
     <div class="problem-list" id="problemList">
     </div>
+    
 </div>
 
 <script>
