@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>日本語を英語の語順にしよう①</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: #333;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 印刷時の設定 */
+        @media print {
+            body { background-color: white; }
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: avoid;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24pt;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .name-section {
+            text-align: right;
+            font-size: 14pt;
+            margin-bottom: 40px;
+        }
+
+        .name-input {
+            border-bottom: 1px solid #333;
+            display: inline-block;
+            width: 200px;
+        }
+
+        .problem-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .problem-item {
+            margin-bottom: 45px;
+            font-size: 18pt;
+        }
+
+        .number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 2px solid #333;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .answer-line {
+            display: block;
+            margin-top: 10px;
+            border-bottom: 2px solid #555;
+            width: 100%;
+            height: 35px;
+        }
+
+        .teacher-answer {
+            position: absolute;
+            bottom: 20mm;
+            right: 20mm;
+            font-size: 10pt;
+            color: #666;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fafafa;
+        }
+
+        /* 飾り用アイコン */
+        .icon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            opacity: 0.3;
+        }
+        .icon-top-left { top: 20px; left: 20px; }
+        .icon-top-right { top: 20px; right: 20px; }
+        .icon-bottom-left { bottom: 20px; left: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <!-- 飾りアイコン -->
+    <svg class="icon icon-top-left" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L9.5 9H2l6 5-2 7 6-4 6 4-2-7 6-5h-7.5L12 2z"/></svg>
+    <svg class="icon icon-top-right" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.59L18 8.5l-8 8z"/></svg>
+    <svg class="icon icon-bottom-left" viewBox="0 0 24 24"><path fill="currentColor" d="M22 17.5c0-.83-.67-1.5-1.5-1.5H3.5C2.67 16 2 16.67 2 17.5c0 .83.67 1.5 1.5 1.5H20.5c.83 0 1.5-.67 1.5-1.5zm0-5c0-.83-.67-1.5-1.5-1.5H3.5C2.67 11 2 11.67 2 12.5c0 .83.67 1.5 1.5 1.5H20.5c.83 0 1.5-.67 1.5-1.5z"/></svg>
+
+    <h1>日本語を英語の語順にしよう①</h1>
+    
+    <div class="name-section">
+        なまえ（<span class="name-input"></span>）
+    </div>
+
+    <div class="problem-list">
+        <div class="problem-item">
+            <span class="number">①</span> わたしは りんごを たべる
+            <span class="answer-line"></span>
+        </div>
+        <div class="problem-item">
+            <span class="number">②</span> ぼくは かおを あらう
+            <span class="answer-line"></span>
+        </div>
+        <div class="problem-item">
+            <span class="number">③</span> わたしは みずを のむ
+            <span class="answer-line"></span>
+        </div>
+        <div class="problem-item">
+            <span class="number">④</span> わたしたちは サッカーを する
+            <span class="answer-line"></span>
+        </div>
+        <div class="problem-item">
+            <span class="number">⑤</span> かれは えを かく
+            <span class="answer-line"></span>
+        </div>
+    </div>
+
+    <div class="teacher-answer">
+        先生用答え<br>
+        ① わたしは たべる りんごを<br>
+        ② ぼくは あらう かおを<br>
+        ③ わたしは のむ みずを<br>
+        ④ わたしたちは する サッカーを<br>
+        ⑤ かれは かく えを
+    </div>
+</div>
+
+</body>
+</html>
