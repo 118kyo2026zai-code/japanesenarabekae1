@@ -14,83 +14,86 @@
 
         .page {
             width: 210mm;
-            height: 297mm;
-            padding: 20mm;
-            margin: 10mm auto;
+            min-height: 297mm;
+            padding: 10mm;
+            margin: 0 auto;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             box-sizing: border-box;
             border: 4px double #4a90e2;
-            position: relative;
         }
 
         h1 {
             text-align: center;
-            font-size: 24pt;
-            margin-bottom: 30px;
+            font-size: 18pt;
+            margin: 0 0 15px 0;
             color: #2c3e50;
         }
 
         .name-section {
             text-align: right;
-            font-size: 14pt;
-            margin-bottom: 30px;
+            font-size: 11pt;
+            margin-bottom: 15px;
         }
 
         .name-input {
             border-bottom: 2px solid #333;
             display: inline-block;
-            width: 200px;
+            width: 150px;
+        }
+
+        .problem-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
         .problem-item {
-            margin-bottom: 40px;
+            margin-bottom: 10px;
             border-bottom: 1px dotted #ccc;
-            padding-bottom: 20px;
+            padding-bottom: 5px;
         }
 
         .number-box {
             display: inline-block;
-            width: 35px;
-            height: 35px;
-            line-height: 35px;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
             text-align: center;
             background-color: #4a90e2;
             color: white;
-            border-radius: 8px;
-            margin-right: 15px;
+            border-radius: 5px;
+            margin-right: 5px;
             font-weight: bold;
+            font-size: 11pt;
         }
 
         .card-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-            margin-left: 55px;
+            gap: 4px;
+            margin-bottom: 5px;
+            margin-left: 30px;
         }
 
         .word-card {
             border: 2px solid #555;
-            padding: 8px 15px;
-            border-radius: 10px;
+            padding: 2px 6px;
+            border-radius: 6px;
             background-color: #fff8e1;
-            font-size: 18pt;
+            font-size: 12pt;
             font-weight: bold;
         }
 
         .answer-line {
             display: block;
-            margin-top: 15px;
-            margin-left: 55px;
+            margin-left: 30px;
             border-bottom: 2px solid #333;
-            height: 40px;
-            font-size: 18pt;
+            height: 20px;
         }
 
         .deco-icon {
-            font-size: 30px;
-            margin-top: 20px;
+            font-size: 20px;
+            margin-top: 10px;
             text-align: center;
         }
     </style>
@@ -104,60 +107,118 @@
         なまえ（<span class="name-input"></span>）
     </div>
 
-    <div class="problem-item">
-        <div class="number-box">1</div>
-        <div class="card-container">
-            <span class="word-card">わたしは</span>
-            <span class="word-card">りんごを</span>
-            <span class="word-card">たべる</span>
+    <div class="problem-list">
+        
+        <div class="problem-item">
+            <div class="number-box">1</div>
+            <div class="card-container">
+                <span class="word-card">わたしは</span>
+                <span class="word-card">りんごを</span>
+                <span class="word-card">たべる</span>
+            </div>
+            <div class="answer-line"></div>
         </div>
-        <div class="answer-line"></div>
-    </div>
 
-    <div class="problem-item">
-        <div class="number-box">2</div>
-        <div class="card-container">
-            <span class="word-card">ぼくは</span>
-            <span class="word-card">かおを</span>
-            <span class="word-card">あらう</span>
+        <div class="problem-item">
+            <div class="number-box">2</div>
+            <div class="card-container">
+                <span class="word-card">ぼくは</span>
+                <span class="word-card">かおを</span>
+                <span class="word-card">あらう</span>
+            </div>
+            <div class="answer-line"></div>
         </div>
-        <div class="answer-line"></div>
-    </div>
 
-    <div class="problem-item">
-        <div class="number-box">3</div>
-        <div class="card-container">
-            <span class="word-card">わたしは</span>
-            <span class="word-card">みずを</span>
-            <span class="word-card">のむ</span>
+        <div class="problem-item">
+            <div class="number-box">3</div>
+            <div class="card-container">
+                <span class="word-card">わたしは</span>
+                <span class="word-card">みずを</span>
+                <span class="word-card">のむ</span>
+            </div>
+            <div class="answer-line"></div>
         </div>
-        <div class="answer-line"></div>
-    </div>
 
-    <div class="problem-item">
-        <div class="number-box">4</div>
-        <div class="card-container">
-            <span class="word-card">わたしたちは</span>
-            <span class="word-card">サッカーを</span>
-            <span class="word-card">する</span>
+        <div class="problem-item">
+            <div class="number-box">4</div>
+            <div class="card-container">
+                <span class="word-card">わたしたちは</span>
+                <span class="word-card">サッカーを</span>
+                <span class="word-card">する</span>
+            </div>
+            <div class="answer-line"></div>
         </div>
-        <div class="answer-line"></div>
-    </div>
 
-    <div class="problem-item">
-        <div class="number-box">5</div>
-        <div class="card-container">
-            <span class="word-card">かれは</span>
-            <span class="word-card">えを</span>
-            <span class="word-card">かく</span>
+        <div class="problem-item">
+            <div class="number-box">5</div>
+            <div class="card-container">
+                <span class="word-card">かれは</span>
+                <span class="word-card">えを</span>
+                <span class="word-card">かく</span>
+            </div>
+            <div class="answer-line"></div>
         </div>
-        <div class="answer-line"></div>
+
+        <div class="problem-item">
+            <div class="number-box">6</div>
+            <div class="card-container">
+                <span class="word-card">あなたは</span>
+                <span class="word-card">ほんを</span>
+                <span class="word-card">よむ</span>
+            </div>
+            <div class="answer-line"></div>
+        </div>
+
+        <div class="problem-item">
+            <div class="number-box">7</div>
+            <div class="card-container">
+                <span class="word-card">かのじょは</span>
+                <span class="word-card">テニスを</span>
+                <span class="word-card">する</span>
+            </div>
+            <div class="answer-line"></div>
+        </div>
+
+        <div class="problem-item">
+            <div class="number-box">8</div>
+            <div class="card-container">
+                <span class="word-card">あなたたちは</span>
+                <span class="word-card">パンを</span>
+                <span class="word-card">たべる</span>
+            </div>
+            <div class="answer-line"></div>
+        </div>
+
+        <div class="problem-item">
+            <div class="problem-item">
+                <div class="number-box">9</div>
+                <div class="card-container">
+                    <span class="word-card">わたしたちは</span>
+                    <span class="word-card">うたを</span>
+                    <span class="word-card">うたう</span>
+                </div>
+                <div class="answer-line"></div>
+            </div>
+        </div>
+
+        <div class="problem-item">
+            <div class="number-box">10</div>
+            <div class="card-container">
+                <span class="word-card">わたしは</span>
+                <span class="word-card">ぼうしを</span>
+                <span class="word-card">もつ</span>
+            </div>
+            <div class="answer-line"></div>
+        </div>
     </div>
 
     <div class="deco-icon">
-        🍎 ✏️ ⭐ 
+        🍎 ✏️ ⭐ 😊
     </div>
 </div>
+
+</body>
+</html>
 
 </body>
 </html>
