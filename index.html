@@ -12,13 +12,13 @@
         }
 
         .control-panel {
-            width: 90%;
-            max-width: 800px;
+            width: 210mm;
             margin: 20px auto;
             padding: 20px;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
         }
 
         textarea {
@@ -49,7 +49,6 @@
             background: #27ae60;
         }
 
-        /* 印刷用レイアウト */
         .page {
             width: 210mm;
             height: 297mm;
@@ -57,15 +56,14 @@
             margin: 10mm auto;
             background-color: white;
             box-sizing: border-box;
-            border: 5px solid #4a90e2; /* 外側の太線 */
+            border: 5px solid #4a90e2;
             position: relative;
         }
 
-        /* 二重線の再現 */
         .inner-border {
             width: 100%;
             height: 100%;
-            border: 2px solid #4a90e2; /* 内側の細線 */
+            border: 2px solid #4a90e2;
             padding: 15mm 10mm;
             box-sizing: border-box;
         }
@@ -179,11 +177,7 @@
 
 <script>
     const defaultProblems = 
-`わたしは,りんごを,たべる
-ぼくは,かおを,あらう
-わたしは,みずを,のむ
-わたしたちは,サッカーを,する
-かれは,えを,かく`;
+"わたしは,りんごを,たべる\nぼくは,かおを,あらう\nわたしは,みずを,のむ\nわたしたちは,サッカーを,する\nかれは,えを,かく";
 
     function copyPrompt() {
         const prompt = "以下の条件で、英語の語順学習プリント用の日本語の文章を5個作ってください。・小学校高学年向け・形式は「主語,目的語,動詞」の順番でカンマ区切りにする・第三文型(SVO)の文のみを使用する・主語は「わたし」「ぼく」「あなた」「あなたたち」「かれ」「かのじょ」「わたしたち」をランダムに混ぜる";
