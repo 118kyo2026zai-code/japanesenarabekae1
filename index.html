@@ -4,47 +4,143 @@
     <meta charset="UTF-8">
     <title>日本語を英語の語順にしよう①</title>
     <style>
-        /* Reset & General */
-        body {
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8; /* ソフトな背景色 */
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: #f8f8f8;
+            font-family: sans-serif;
             color: #333;
             line-height: 1.4;
         }
 
-        /* Page Layout (A4) */
         .page {
             width: 210mm;
             height: 297mm;
-            padding: 18mm 15mm; /* 余白のバランス調整 */
+            padding: 18mm 15mm;
             margin: 10mm auto;
             background-color: white;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
             box-sizing: border-box;
             position: relative;
             overflow: hidden;
-            border: 2px dashed #a3cef8; /* フレームとしての薄い破線 */
-            border-radius: 15px; /* 角を丸くして親しみやすく */
+            border: 2px dashed #a3cef8;
+            border-radius: 15px;
         }
 
-        /* Print Optimization */
         @media print {
             body { background-color: white; }
             .page {
                 margin: 0;
                 box-shadow: none;
-                page-break-after: avoid;
-                border: none; /* 印刷時はフレームを消す */
+                border: none;
             }
         }
 
-        /* Title */
         h1 {
             text-align: center;
             font-size: 26pt;
             margin-bottom: 10px;
             color: #2c3e50;
-            position: relative;
-            display:
+        }
+
+        .name-section {
+            text-align: right;
+            font-size: 14pt;
+            margin-bottom: 40px;
+        }
+
+        .name-input {
+            border-bottom: 2px solid #333;
+            display: inline-block;
+            width: 200px;
+        }
+
+        .problem-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .problem-item {
+            margin-bottom: 45px;
+            font-size: 18pt;
+        }
+
+        .number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 2px solid #4a90e2;
+            background-color: #eaf4ff;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .answer-line {
+            display: block;
+            margin-top: 10px;
+            border-bottom: 2px solid #555;
+            width: 100%;
+            height: 35px;
+        }
+
+        .pencil-icon {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+        }
+
+        .deco-bottom {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="pencil-icon">✎</div>
+    
+    <h1>日本語を英語の語順にしよう①</h1>
+    
+    <div class="name-section">
+        なまえ（<span class="name-input"></span>）
+    </div>
+
+    <div class="problem-list">
+        <div class="problem-item">
+            <span class="number">①</span> わたしは りんごを たべる
+            <span class="answer-line"></span>
+        </div>
+        <div class="problem-item">
+            <span class="number">②</span> ぼくは かおを あらう
+            <span class="answer-line"></span>
+        </div>
+        <div class="problem-item">
+            <span class="number">③</span> わたしは みずを のむ
+            <span class="answer-line"></span>
+        </div>
+        <div class="problem-item">
+            <span class="number">④</span> わたしたちは サッカーを する
+            <span class="answer-line"></span>
+        </div>
+        <div class="problem-item">
+            <span class="number">⑤</span> かれは えを かく
+            <span class="answer-line"></span>
+        </div>
+    </div>
+
+    <div class="deco-bottom">
+        🍎 ⭐ 😊
+    </div>
+</div>
+
+</body>
+</html>
