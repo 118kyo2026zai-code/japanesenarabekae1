@@ -2,36 +2,65 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>日本語を英語の語順にしよう①</title>
+    <title>英語語順プリント作成ツール</title>
     <style>
-        body {
+        /* レイアウト調整 */
+        html, body {
             margin: 0;
             padding: 0;
-            background-color: #fcfcfc;
+            background-color: #f0f0f0;
             font-family: sans-serif;
-            color: #333;
         }
 
+        /* 編集・操作エリア（印刷時は非表示） */
+        .control-panel {
+            width: 210mm;
+            margin: 10px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* 印刷用プリントエリア */
         .page {
             width: 210mm;
-            min-height: 297mm;
-            padding: 10mm;
-            margin: 0 auto;
+            height: 297mm;
+            padding: 15mm;
+            margin: 10mm auto;
             background-color: white;
             box-sizing: border-box;
             border: 4px double #4a90e2;
+            position: relative;
         }
 
         h1 {
             text-align: center;
-            font-size: 18pt;
+            font-size: 20pt;
             margin: 0 0 15px 0;
             color: #2c3e50;
         }
 
         .name-section {
             text-align: right;
-            font-size: 11pt;
+            font-size: 12pt;
             margin-bottom: 15px;
         }
 
@@ -55,16 +84,16 @@
 
         .number-box {
             display: inline-block;
-            width: 22px;
-            height: 22px;
-            line-height: 22px;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
             text-align: center;
             background-color: #4a90e2;
             color: white;
             border-radius: 5px;
             margin-right: 5px;
             font-weight: bold;
-            font-size: 11pt;
+            font-size: 12pt;
         }
 
         .card-container {
@@ -77,10 +106,10 @@
 
         .word-card {
             border: 2px solid #555;
-            padding: 2px 6px;
+            padding: 3px 8px;
             border-radius: 6px;
             background-color: #fff8e1;
-            font-size: 12pt;
+            font-size: 13pt;
             font-weight: bold;
         }
 
@@ -88,137 +117,93 @@
             display: block;
             margin-left: 30px;
             border-bottom: 2px solid #333;
-            height: 20px;
+            height: 22px;
         }
 
         .deco-icon {
-            font-size: 20px;
-            margin-top: 10px;
+            font-size: 25px;
+            margin-top: 15px;
             text-align: center;
+        }
+
+        /* 印刷設定 */
+        @media print {
+            .control-panel { display: none; }
+            body { background-color: white; }
+            .page { margin: 0; box-shadow: none; border: 4px double #4a90e2; }
         }
     </style>
 </head>
 <body>
 
-<div class="page">
-    <h1>日本語を英語の語順にしよう①</h1>
-    
-    <div class="name-section">
-        なまえ（<span class="name-input"></span>）
-    </div>
-
-    <div class="problem-list">
-        
-        <div class="problem-item">
-            <div class="number-box">1</div>
-            <div class="card-container">
-                <span class="word-card">わたしは</span>
-                <span class="word-card">りんごを</span>
-                <span class="word-card">たべる</span>
-            </div>
-            <div class="answer-line"></div>
-        </div>
-
-        <div class="problem-item">
-            <div class="number-box">2</div>
-            <div class="card-container">
-                <span class="word-card">ぼくは</span>
-                <span class="word-card">かおを</span>
-                <span class="word-card">あらう</span>
-            </div>
-            <div class="answer-line"></div>
-        </div>
-
-        <div class="problem-item">
-            <div class="number-box">3</div>
-            <div class="card-container">
-                <span class="word-card">わたしは</span>
-                <span class="word-card">みずを</span>
-                <span class="word-card">のむ</span>
-            </div>
-            <div class="answer-line"></div>
-        </div>
-
-        <div class="problem-item">
-            <div class="number-box">4</div>
-            <div class="card-container">
-                <span class="word-card">わたしたちは</span>
-                <span class="word-card">サッカーを</span>
-                <span class="word-card">する</span>
-            </div>
-            <div class="answer-line"></div>
-        </div>
-
-        <div class="problem-item">
-            <div class="number-box">5</div>
-            <div class="card-container">
-                <span class="word-card">かれは</span>
-                <span class="word-card">えを</span>
-                <span class="word-card">かく</span>
-            </div>
-            <div class="answer-line"></div>
-        </div>
-
-        <div class="problem-item">
-            <div class="number-box">6</div>
-            <div class="card-container">
-                <span class="word-card">あなたは</span>
-                <span class="word-card">ほんを</span>
-                <span class="word-card">よむ</span>
-            </div>
-            <div class="answer-line"></div>
-        </div>
-
-        <div class="problem-item">
-            <div class="number-box">7</div>
-            <div class="card-container">
-                <span class="word-card">かのじょは</span>
-                <span class="word-card">テニスを</span>
-                <span class="word-card">する</span>
-            </div>
-            <div class="answer-line"></div>
-        </div>
-
-        <div class="problem-item">
-            <div class="number-box">8</div>
-            <div class="card-container">
-                <span class="word-card">あなたたちは</span>
-                <span class="word-card">パンを</span>
-                <span class="word-card">たべる</span>
-            </div>
-            <div class="answer-line"></div>
-        </div>
-
-        <div class="problem-item">
-            <div class="problem-item">
-                <div class="number-box">9</div>
-                <div class="card-container">
-                    <span class="word-card">わたしたちは</span>
-                    <span class="word-card">うたを</span>
-                    <span class="word-card">うたう</span>
-                </div>
-                <div class="answer-line"></div>
-            </div>
-        </div>
-
-        <div class="problem-item">
-            <div class="number-box">10</div>
-            <div class="card-container">
-                <span class="word-card">わたしは</span>
-                <span class="word-card">ぼうしを</span>
-                <span class="word-card">もつ</span>
-            </div>
-            <div class="answer-line"></div>
-        </div>
-    </div>
-
-    <div class="deco-icon">
-        🍎 ✏️ ⭐ 😊
-    </div>
+<div class="control-panel">
+    <button onclick="copyPrompt()">AIプロンプトをコピー</button>
+    <button onclick="resetToDefault()">デフォルトに戻す</button>
+    <p>ここに問題を入力（一行に一問。単語の間はカンマで区切る 例: わたしは,りんごを,たべる）</p>
+    <textarea id="problemInput" oninput="generateWorksheet()"></textarea>
 </div>
 
-</body>
-</html>
+<div class="page" id="printArea">
+    <h1>日本語を英語の語順にしよう①</h1>
+    <div class="name-section">なまえ（<span class="name-input"></span>）</div>
+    <div class="problem-list" id="problemList">
+        <!-- JSで生成 -->
+    </div>
+    <div class="deco-icon">🍎 ✏️ ⭐ 😊</div>
+</div>
 
+<script>
+    const defaultProblems = 
+`わたしは,りんごを,たべる
+ぼくは,かおを,あらう
+わたしは,みずを,のむ
+わたしたちは,サッカーを,する
+かれは,えを,かく
+あなたは,ほんを,よむ
+かのじょは,テニスを,する
+あなたたちは,パンを,たべる
+わたしたちは,うたを,うたう
+わたしは,ぼうしを,もつ`;
+
+    function copyPrompt() {
+        const prompt = "以下の条件で、英語の語順学習プリント用の日本語の文章を10個作ってください。・小学校高学年向け・形式は「主語,目的語,動詞」の順番でカンマ区切りにする・第三文型(SVO)の文のみを使用する・主語は「わたし」「ぼく」「あなた」「あなたたち」「かれ」「かのじょ」「わたしたち」をランダムに混ぜる";
+        navigator.clipboard.writeText(prompt);
+        alert("プロンプトをコピーしました！AIに貼り付けてください。");
+    }
+
+    function resetToDefault() {
+        document.getElementById('problemInput').value = defaultProblems;
+        generateWorksheet();
+    }
+
+    function generateWorksheet() {
+        const input = document.getElementById('problemInput').value;
+        const list = document.getElementById('problemList');
+        list.innerHTML = '';
+        
+        const lines = input.split('\n');
+        lines.forEach((line, index) => {
+            if (line.trim() === '') return;
+            const words = line.split(',');
+            
+            const div = document.createElement('div');
+            div.className = 'problem-item';
+            
+            let cards = '';
+            words.forEach(word => {
+                cards += '<span class="word-card">' + word + '</span>';
+            });
+            
+            div.innerHTML = 
+                '<div class="number-box">' + (index + 1) + '</div>' +
+                '<div class="card-container">' + cards + '</div>' +
+                '<div class="answer-line"></div>';
+            list.appendChild(div);
+        });
+    }
+
+    // 初回読み込み
+    resetToDefault();
+</script>
 </body>
 </html>
